@@ -4,7 +4,6 @@
 # IMPORT MODULES ----------------------------------------------------------
 library(quantmod)
 library(plumber)
-library(jsonlite)
 
 # DEFINE FUNCTION ---------------------------------------------------------
 # This section defines a function to pull stock prices.
@@ -19,7 +18,7 @@ pull_price = function(symbol)
   price = getQuote(symbol)$Last
   
   # Return time and last price.
-  return(toJSON(paste0(Sys.time(), ': ', toupper(symbol), ' $', price)))
+  return(paste0(Sys.time(), ': ', toupper(symbol), ' $', price))
   
 }
 

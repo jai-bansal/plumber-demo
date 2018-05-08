@@ -19,7 +19,7 @@ pull_price = function(symbol)
   price = getQuote(symbol)$Last
   
   # Return time and last price.
-  return(toJSON(paste0(Sys.time(), ': ', symbol, ' $', price)))
+  return(toJSON(paste0(Sys.time(), ': ', toupper(symbol), ' $', price)))
   
 }
 
